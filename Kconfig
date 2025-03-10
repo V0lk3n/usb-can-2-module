@@ -1,5 +1,5 @@
-config usb-can-hlcan
+config hlcan
         tristate "hlcan module for usb-can"
         depends on USB
         help
-          Help message of usb-can-hlcan
+          Help message of hlcan
