@@ -229,7 +229,8 @@ static void slc_bump(struct slcan *sl)
 	can_skb_prv(skb)->ifindex = sl->dev->ifindex;
 	can_skb_prv(skb)->skbcnt = 0;
 
-	skb_put_data(skb, &cf, sizeof(struct can_frame));
+	skb_put(skb, sizeof(struct can_frame));
+	memcpy(skb->data, &cf, sizeof(struct can_frame));
 
 	sl->dev->stats.rx_packets++;
 #if LINUX_VERSION_CODE <= KERNEL_VERSION(5, 13, 0)
