@@ -62,6 +62,10 @@
 #include <linux/version.h>
 #include "hlcan.h"
 
+#ifndef fallthrough
+#define fallthrough __attribute__((fallthrough));
+#endif
+
 MODULE_ALIAS_LDISC(N_HLCAN);
 MODULE_DESCRIPTION("hl340 CAN interface");
 MODULE_LICENSE("GPL");
